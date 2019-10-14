@@ -9,5 +9,12 @@
     <div class="section" style="text-align:center">
         <span>{{vinyl.releaseDate}}</span>
     </div>
-    <button (click)="onClickButton()">Change</button>
+    <div class="section" style="text-align:center">
+        <app-counting-buttons
+            [(value)]="vinyl.releaseDate"
+        ></app-counting-buttons>
+    </div>
+    <div class="section">
+        <button (click)="onClickButton()">Change</button>
+    </div>
 </div>
