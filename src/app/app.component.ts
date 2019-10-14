@@ -22,4 +22,8 @@ export class AppComponent {
     imageUrl: 'https://i.pinimg.com/originals/47/6d/37/476d37cdb71c6d856ff0d42a65f97b28.jpg'
   }
 
+  onClickVinylButton(vinyl) {
+    console.log(vinyl);
+  }
+
 }

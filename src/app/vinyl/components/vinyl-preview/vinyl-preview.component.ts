@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-vinyl-preview',
@@ -9,13 +9,15 @@ export class VinylPreviewComponent implements OnInit {
 
   @Input() vinyl: any;
 
+  @Output() clickButton = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  changeReleaseDate() {
-    this.vinyl.releaseDate += 1;
+  onClickButton() {
+    this.clickButton.emit(this.vinyl);
   }
 
 }

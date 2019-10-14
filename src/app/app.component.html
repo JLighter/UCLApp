@@ -1,4 +1,4 @@
 <h1>My first app</h1>
 
-<app-vinyl-preview [vinyl]="bmVinyl"></app-vinyl-preview>
-<app-vinyl-preview [vinyl]="mjVinyl"></app-vinyl-preview>
+<app-vinyl-preview (clickButton)="onClickVinylButton($event)" [vinyl]="bmVinyl"></app-vinyl-preview>
+<app-vinyl-preview (clickButton)="onClickVinylButton($event)" [vinyl]="mjVinyl"></app-vinyl-preview>
