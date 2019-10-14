@@ -7,11 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class VinylPreviewComponent implements OnInit {
 
-  @Input() vinyl: object;
+  @Input() vinyl: any;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changeReleaseDate() {
+    this.vinyl.releaseDate += 1;
   }
 
 }
