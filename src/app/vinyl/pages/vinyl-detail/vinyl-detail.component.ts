@@ -13,17 +13,11 @@ export class VinylDetailComponent implements OnInit {
   vinyl: Vinyl;
 
   constructor(
-    private route: ActivatedRoute,
-    private vinylService: VinylService,
-    private router: Router
+    private route: ActivatedRoute
   ) {
-    this.route.data.subscribe((params) => {
-      try {
-        this.vinyl = this.vinylService.getOne(+params.id);
-      } catch(e) {
-        this.router.navigate(['not-found']);
-      }
-    });
+    this.route.data.subscribe((data) => {
+      this.vinyl = data.vinyl;
+    })
   }
 
   ngOnInit() {}
