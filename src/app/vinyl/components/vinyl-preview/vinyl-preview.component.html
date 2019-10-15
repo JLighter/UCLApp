@@ -8,7 +8,7 @@
     <div class="section"
         [ngClass]="{inedit: isModified}"
         style="text-align:center">
-        <span>{{vinyl.releaseDate}}</span>
+        <span>{{vinyl.releaseDate | date}}</span>
     </div>
     <div *ngIf="isModified" class="section" style="text-align:center">
         <app-counting-buttons
