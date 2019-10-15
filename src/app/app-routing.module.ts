@@ -13,6 +13,10 @@ const routes: Routes = [
         path: 'vinyl', 
         loadChildren: () => import('./vinyl/vinyl.module').then(mod => mod.VinylModule) 
     },
+    { 
+        path: 'user', 
+        loadChildren: () => import('./user/user.module').then(mod => mod.UserModule) 
+    },
     { path: '**', redirectTo: '/not-found', pathMatch: 'full' },
 ]
 
