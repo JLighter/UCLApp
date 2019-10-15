@@ -9,12 +9,12 @@
     <div class="section" style="text-align:center">
         <span>{{vinyl.releaseDate}}</span>
     </div>
-    <div class="section" style="text-align:center">
+    <div *ngIf="isModified" class="section" style="text-align:center">
         <app-counting-buttons
             [(value)]="vinyl.releaseDate"
         ></app-counting-buttons>
     </div>
-    <div class="section">
-        <button (click)="onClickButton()">Change</button>
+    <div class="section" style="text-align:center">
+        <button (click)="switchModified()">Change</button>
     </div>
 </div>

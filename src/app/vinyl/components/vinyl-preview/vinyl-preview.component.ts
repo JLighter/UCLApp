@@ -9,11 +9,17 @@ export class VinylPreviewComponent implements OnInit {
 
   @Input() vinyl: any;
 
+  isModified = false;
+
   @Output() clickButton = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  switchModified() {
+    this.isModified = !this.isModified;
   }
 
   onClickButton() {
