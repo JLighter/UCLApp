@@ -33,7 +33,13 @@ export class VinylService {
   getOne(id: number): Vinyl {
     if (id == null) throw Error('Need a non null id number')
 
-    return this.vinyls.find((vinyl) => vinyl.id === id);
+    const found = this.vinyls.find((vinyl) => vinyl.id === id);
+
+    if (found == null) {
+      throw Error('Not found vinyl for id ' + id)
+    }
+    
+    return found
   }
 
   updateOne(id: number, updated: Vinyl) {

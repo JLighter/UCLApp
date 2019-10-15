@@ -5,7 +5,7 @@ import { VinylDetailComponent } from './pages/vinyl-detail/vinyl-detail.componen
 
 const routes: Routes = [
     { path: 'list', component: VinylListComponent },
-    { path: 'detail', component: VinylDetailComponent },
+    { path: 'detail/:id', component: VinylDetailComponent },
 ]
 
 @NgModule({

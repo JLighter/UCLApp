@@ -13,6 +13,7 @@ export class VinylPreviewComponent implements OnInit {
   isModified = false;
 
   @Output() clickButton = new EventEmitter();
+  @Output() clickCover = new EventEmitter();
 
   constructor(private vinylService: VinylService) {
     console.log('use vinyl service in preview', vinylService);
@@ -23,6 +24,10 @@ export class VinylPreviewComponent implements OnInit {
 
   switchModified() {
     this.isModified = !this.isModified;
+  }
+
+  onClickCover() {
+    this.clickCover.emit(this.vinyl);
   }
 
   onClickButton() {
