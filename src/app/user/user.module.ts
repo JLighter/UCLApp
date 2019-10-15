@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { LoginComponent } from './pages/login/login.component';
 import { AccountComponent } from './pages/account/account.component';
+import { LoginGuard } from './guards/login.guard';
 
 
 @NgModule({
@@ -11,6 +12,9 @@ import { AccountComponent } from './pages/account/account.component';
   imports: [
     CommonModule,
     UserRoutingModule
+  ],
+  providers: [
+    LoginGuard
   ]
 })
 export class UserModule { }
