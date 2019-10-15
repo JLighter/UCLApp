@@ -3,14 +3,17 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class UserService {
 
+  private _isLogged = false;
+
   constructor() { }
 
   isLogged() {
-    return false;
+    return this._isLogged;
   }
 
   login(username: string, password: string) {
-    return username === 'toto' && password === 'admin'
+    this._isLogged = username === 'toto' && password === 'admin';
+    return this._isLogged;
   }
 
 }

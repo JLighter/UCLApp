@@ -13,7 +13,6 @@ export class VinylResolver implements Resolve<Vinyl> {
         private router: Router
     ) {}
 
-
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Vinyl> | Promise<Vinyl> | Vinyl {
         
         const id  = +route.params.id;
