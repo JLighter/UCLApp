@@ -1,0 +1,7 @@
+.inedit {
+    font-weight: bold;
+}
+
+.inedit > span {
+    color: green;
+}

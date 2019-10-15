@@ -1,5 +1,4 @@
 <div class="card">
-
     <div class="section media">
         <img [src]="vinyl.imageUrl" alt="Vinyl image of {{vinyl.artist}} {{vinyl.title}}">
     </div>
@@ -7,7 +6,7 @@
         <h4>{{vinyl.title}} <small>by {{vinyl.artist}}</small></h4>
     </div>
     <div class="section"
-        [ngStyle]="{color: getDateColor()}"
+        [ngClass]="{inedit: isModified}"
         style="text-align:center">
         <span>{{vinyl.releaseDate}}</span>
     </div>
