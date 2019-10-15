@@ -22,6 +22,10 @@ export class VinylPreviewComponent implements OnInit {
     this.isModified = !this.isModified;
   }
 
+  getDateColor() {
+    return this.isModified ? 'green' : 'black';
+  }
+
   onClickButton() {
     this.clickButton.emit(this.vinyl);
   }

@@ -6,7 +6,9 @@
     <div class="section">
         <h4>{{vinyl.title}} <small>by {{vinyl.artist}}</small></h4>
     </div>
-    <div class="section" style="text-align:center">
+    <div class="section"
+        [ngStyle]="{color: getDateColor()}"
+        style="text-align:center">
         <span>{{vinyl.releaseDate}}</span>
     </div>
     <div *ngIf="isModified" class="section" style="text-align:center">
