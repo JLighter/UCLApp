@@ -9,14 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './not-found/not-found.component';
-
-const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'not-found', component: NotFoundComponent },
-  { path: '**', redirectTo: '/not-found', pathMatch: 'full' },
-]
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -29,8 +22,8 @@ const routes: Routes = [
     BrowserModule,
     CoreModule,
     SharedModule,
-    RouterModule.forRoot(routes),
     VinylModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
