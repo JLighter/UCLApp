@@ -1,5 +1,4 @@
 <h1>My first app</h1>
 
-<ng-container *ngFor="let vinyl of vinyls | slice:0:10">
-  <app-vinyl-preview (clickButton)="onClickVinylButton($event)" [vinyl]="vinyl"></app-vinyl-preview>
-</ng-container>
+<router-outlet></router-outlet>
+
