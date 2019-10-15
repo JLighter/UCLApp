@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VinylService } from 'src/app/core/services/vinyl.service';
+import { Vinyl } from 'src/app/core/models/vinyl.model';
 
 @Component({
   selector: 'app-vinyl-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VinylListComponent implements OnInit {
 
-  constructor() { }
+  vinyls: Vinyl[];
+
+  constructor(private vinylService: VinylService) { }
 
   ngOnInit() {
+    this.vinyls = this.vinylService.getAll()
   }
 
 }

@@ -1,1 +1,6 @@
-<p>vinyl-list works!</p>
+<div class="row">
+    <app-vinyl-preview 
+        *ngFor="let vinyl of vinyls" 
+        [vinyl]="vinyl">
+    </app-vinyl-preview>
+</div>
