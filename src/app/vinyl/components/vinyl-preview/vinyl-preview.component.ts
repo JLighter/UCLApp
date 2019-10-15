@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { VinylService } from 'src/app/core/services/vinyl.service';
 
 @Component({
   selector: 'app-vinyl-preview',
@@ -13,7 +14,9 @@ export class VinylPreviewComponent implements OnInit {
 
   @Output() clickButton = new EventEmitter();
 
-  constructor() { }
+  constructor(private vinylService: VinylService) {
+    console.log('use vinyl service in preview', vinylService);
+  }
 
   ngOnInit() {
   }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { VinylModule } from './vinyl/vinyl.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { VinylModule } from './vinyl/vinyl.module';
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     VinylModule
   ],
   providers: [],

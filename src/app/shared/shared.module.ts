@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CountingButtonsComponent } from './components/counting-buttons/counting-buttons.component';
+import { MyUppercasePipe } from './pipes/my-uppercase/my-uppercase.pipe';
 
 
 
 @NgModule({
   declarations: [
-    CountingButtonsComponent
+    CountingButtonsComponent,
+    MyUppercasePipe
   ],
   exports: [
-    CountingButtonsComponent
+    CountingButtonsComponent,
+    MyUppercasePipe
   ],
   imports: [
     CommonModule

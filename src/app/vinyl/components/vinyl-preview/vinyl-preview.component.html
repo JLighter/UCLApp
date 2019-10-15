@@ -3,7 +3,7 @@
         <img [src]="vinyl.imageUrl" alt="Vinyl image of {{vinyl.artist}} {{vinyl.title}}">
     </div>
     <div class="section">
-        <h4>{{vinyl.title}} <small>by {{vinyl.artist}}</small></h4>
+        <h4>{{vinyl.title | myUppercase}} <small>by {{vinyl.artist}}</small></h4>
     </div>
     <div class="section"
         [ngClass]="{inedit: isModified}"
