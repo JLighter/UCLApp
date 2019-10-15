@@ -9,6 +9,10 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'not-found', component: NotFoundComponent },
+    { 
+        path: 'vinyl', 
+        loadChildren: () => import('./vinyl/vinyl.module').then(mod => mod.VinylModule) 
+    },
     { path: '**', redirectTo: '/not-found', pathMatch: 'full' },
 ]
 
