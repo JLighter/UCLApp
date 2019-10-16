@@ -1,0 +1,18 @@
+{
+  "vinyls": [
+    {
+      "id": 1,
+      "title": "Uprising",
+      "artist": "Bob marley and the Wailer",
+      "imageUrl": "https://img.cdandlp.com/2017/06/imgL/118865816.jpg",
+      "releaseDate": 315529200000
+    },
+    {
+      "id": 2,
+      "title": "Porgy and Bess",
+      "artist": "Louis Armstrong et Ella Fitzgeral",
+      "imageUrl": "https://media1.jpc.de/image/w600/front/0/8436542011464.jpg",
+      "releaseDate": -378694800000
+    }
+  ]
+}
