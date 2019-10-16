@@ -33,7 +33,7 @@
     <div class="form-group">
         <label for="releaseDate">Release date</label>
 
-        <input #releaseDate type="text" id="releaseDate" [(ngModel)]="vinyl.releaseDate" name="releaseDate" 
+        <input #releaseDate type="date" id="releaseDate" [ngModel]="vinyl.releaseDate | date:'yyyy-MM-dd'" (ngModelChange)="vinyl.releaseDate = $event" name="releaseDate" 
         required>
 
         <div *ngIf="artist.touched && artist.dirty">

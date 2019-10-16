@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Vinyl } from 'src/app/core/models/vinyl.model';
 import { FormGroup } from '@angular/forms';
