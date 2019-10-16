@@ -2,10 +2,10 @@
   "vinyls": [
     {
       "id": 1,
-      "title": "Uprising",
+      "title": "Uprisingtoto",
       "artist": "Bob marley and the Wailer",
       "imageUrl": "https://img.cdandlp.com/2017/06/imgL/118865816.jpg",
-      "releaseDate": 315529200000
+      "releaseDate": "1980-01-01"
     },
     {
       "id": 2,

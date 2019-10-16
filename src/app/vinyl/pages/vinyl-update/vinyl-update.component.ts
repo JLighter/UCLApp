@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Vinyl } from 'src/app/core/models/vinyl.model';
 import { FormGroup } from '@angular/forms';
 import { VinylService } from 'src/app/core/services/vinyl.service';
+import { map, switchMap, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-vinyl-update',
@@ -11,7 +13,7 @@ import { VinylService } from 'src/app/core/services/vinyl.service';
 })
 export class VinylUpdateComponent implements OnInit {
 
-  vinyl: Vinyl;
+  vinyl$: Observable<Vinyl>;
 
   error: any;
 
@@ -19,21 +21,33 @@ export class VinylUpdateComponent implements OnInit {
     private route: ActivatedRoute,
     private vinylService: VinylService,
     private router: Router
-    ) {
-    this.route.data.subscribe((data) => this.vinyl = data.vinyl);
+  ) {
+
+    this.vinyl$ = this.route.data.pipe(
+      map((data) => data.vinyl)
+    )
+
   }
 
   ngOnInit() {
   }
 
   submit(form: FormGroup) {
-    try {
-      this.vinylService.updateOne(this.vinyl.id, this.vinyl);
-      this.router.navigate(['vinyl', 'list']);
-    } catch (e) {
-      console.error(e);
-      this.error = e;
-    }
+    this.vinyl$.pipe(
+      map((vinyl) => ({
+        id: vinyl.id,
+        title: form.controls.title.value,
+        artist: form.controls.artist.value,
+        imageUrl: form.controls.imageUrl.value,
+        releaseDate: form.controls.releaseDate.value,
+      })),
+      switchMap((vinyl) => this.vinylService.updateOne(vinyl.id, vinyl)),
+    )
+    .subscribe((vinyl) => {
+      this.router.navigate(['vinyl', 'list'])
+    }, (error) => {
+      console.error(error);
+    })
   }
 
 }

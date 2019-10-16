@@ -10,13 +10,9 @@ import { Vinyl } from './core/models/vinyl.model';
 export class AppComponent implements OnInit {
   title = 'first-app';
 
-  vinyls: Vinyl[];
+  constructor() {}
 
-  constructor(private vinylService: VinylService) {}
-
-  ngOnInit() {
-    this.vinyls = this.vinylService.getAll();
-  }
+  ngOnInit() {}
 
   onClickVinylButton(vinyl) {
     console.log(vinyl);

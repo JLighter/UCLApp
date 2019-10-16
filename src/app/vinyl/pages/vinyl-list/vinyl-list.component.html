@@ -1,6 +1,6 @@
 <div class="row">
     <app-vinyl-preview
-        *ngFor="let vinyl of vinyls" 
+        *ngFor="let vinyl of vinyls | async" 
         (clickCover)="onClickVinylCover($event)"
         [vinyl]="vinyl">
     </app-vinyl-preview>

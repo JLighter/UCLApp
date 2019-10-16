@@ -1,5 +1,5 @@
 export interface Vinyl {
-    id: number;
+    id?: number;
     title: string;
     artist: string;
     releaseDate: Date;
