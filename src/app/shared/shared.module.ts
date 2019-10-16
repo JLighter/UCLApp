@@ -4,21 +4,27 @@ import { CountingButtonsComponent } from './components/counting-buttons/counting
 import { MyUppercasePipe } from './pipes/my-uppercase/my-uppercase.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ContainsDirective } from './directives/contains.directive';
 
 @NgModule({
   declarations: [
     CountingButtonsComponent,
     MyUppercasePipe,
-    HeaderComponent
+    HeaderComponent,
+    ContainsDirective
   ],
   exports: [
     CountingButtonsComponent,
     MyUppercasePipe,
-    HeaderComponent
+    HeaderComponent,
+    ContainsDirective,
+    FormsModule,
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

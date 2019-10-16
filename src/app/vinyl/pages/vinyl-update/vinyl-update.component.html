@@ -1,0 +1,61 @@
+<form ngForm #form="ngForm" (ngSubmit)="submit(form)">
+
+    <div class="form-group">
+        <label for="title">Title</label>
+
+        <input #title="ngModel" type="text" id="title" [(ngModel)]="vinyl.title" name="title" 
+        required
+        contains="toto">
+
+        <div *ngIf="title.touched && title.dirty">
+            <span *ngIf="title.errors?.required">
+                Ce champ est requis
+            </span>
+            <span *ngIf="title.errors?.contains">
+                Ce champ doit container {{title.errors?.contains.match}}
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="artist">Artist</label>
+
+        <input #artist="ngModel" type="text" id="artist" [(ngModel)]="vinyl.artist" name="artist" 
+        required>
+
+        <div *ngIf="artist.touched && artist.dirty">
+            <span *ngIf="artist.errors?.required">
+                Ce champ est requis
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="releaseDate">Release date</label>
+
+        <input #releaseDate type="text" id="releaseDate" [(ngModel)]="vinyl.releaseDate" name="releaseDate" 
+        required>
+
+        <div *ngIf="artist.touched && artist.dirty">
+            <span *ngIf="artist.errors?.required">
+                Ce champ est requis
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="imageUrl">Cover url</label>
+
+        <input #imageUrl type="text" id="imageUrl" [(ngModel)]="vinyl.imageUrl" name="imageUrl"
+        required>
+        
+        <div *ngIf="imageUrl.touched && imageUrl.dirty">
+            <span *ngIf="imageUrl.errors?.required">
+                Ce champ est requis
+            </span>
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Update</button>
+
+</form>
