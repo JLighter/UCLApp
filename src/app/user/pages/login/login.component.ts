@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
 
+import { containsValidator } from '../../../utilities/validators';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +12,10 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  usernameControl = new FormControl('', [Validators.required]);
+  usernameControl = new FormControl('', [
+    Validators.required, 
+    containsValidator('toto')
+  ]);
   passwordControl = new FormControl('', [Validators.required]);
 
   form = new FormGroup({

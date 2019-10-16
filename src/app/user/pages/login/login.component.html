@@ -6,6 +6,9 @@
             <span *ngIf="usernameControl.errors?.required">
                 Ce champ est requis
             </span>
+            <span *ngIf="usernameControl.errors?.contains">
+                Ce champ doit contenir {{usernameControl.errors.contains.match}}
+            </span>
         </div>
     </div>
     <div class="form-group">
